@@ -1,33 +1,35 @@
-// var str = 'hello world!';
-// console.log(str);
-// var nick = 'my nick is \'aji\'';
-
-
-var man = {
-	name: 'replay',
-	age:25,
-	hobby:'bike'
-};
-
-// for(var count=0;count<5;count++){
-
-// 	console.log(count);
-// }
-
-function sum(x){
-	var y=1;
-	return x+y;
+function adder(){
+	for(var count=1;count<101;count++){
+		console.log(count);
+	}
 }
 
-//console.log();
+function oddadder(){
+	for(var count=1;count<101;count=count+2){
+		console.log(count);
+	}
+}
 
-console.log(sum(10));
-// if (man.age>30) {
-// 	console.log("old");
-// }
-// else if(man.age>20){
-// 	console.log("young");
-// }
-// else{
-// 	console.log("baby");
-// }
+function kukudan(){
+	for(var count=1;count<10;count++){
+		for(var num=1;num<10;num++){
+			console.log(count*num);
+		}
+	}
+}
+
+function promptadder(){
+	var check = true;
+	var result = 0;
+	while(check){
+		var number2 = prompt("더 할 값을 입력하세요");
+		if (number2==null) {
+			console.log(result);
+			check = false;
+		}
+		else{
+			result=result+parseInt(number2, 10);
+		}
+	}
+}
+promptadder()
