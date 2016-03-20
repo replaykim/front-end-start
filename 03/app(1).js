@@ -1,6 +1,10 @@
-var board = document.getElementById("board");
-var tablesize = 4;
 
+
+
+var board = document.getElementById("board");
+var size = prompt("얼마나 큰 체스판을 원하시나요")
+
+function makeChess(tablesize){
 board.style.height=tablesize*100+'px';
 board.style.width=tablesize*100+'px';
   var spantable = new Array();
@@ -34,23 +38,21 @@ board.style.width=tablesize*100+'px';
         }
     }
 
+}
 
-var unClick = null;
-var beforeColor = null;
+    var unClick = null;
+    var beforeColor = null;
 
-document.getElementById("board").addEventListener("click", function() {
+    document.getElementById("board").addEventListener("click", function() {
 
-    if(unClick !== null){
-        unClick.setAttribute("class", beforeColor);
+        if(unClick !== null){
+            unClick.setAttribute("class", beforeColor);
+        }
         
-        beforeColor = event.target.getAttribute("class");
-        event.target.setAttribute("class", "red");
-        unClick = event.target;
+    	beforeColor = event.target.getAttribute("class");
+    	event.target.setAttribute("class", "red");
+    	unClick = event.target;  
+    });
 
-    }
-    else{
-     	beforeColor = event.target.getAttribute("class");
-  	 	event.target.setAttribute("class", "red");
- 		unClick = event.target;  
-    }
-});
+
+makeChess(size);
