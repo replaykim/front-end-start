@@ -5,11 +5,12 @@ var todos=[
 			 done:"false"
 			}
 		];
-var todoString = document.getElementById('todoString');
 
 function getDom(id){
-	return  document.getElementById('id');
+	return  document.getElementById(id);
 }
+
+// todoString = document.getElementById('todoString');
 
 function onKeyDown()
 {
@@ -17,10 +18,15 @@ function onKeyDown()
      {
           //TODO : 실행시킬 코드
           console.log("ddd");
-        var newtodos = todoString.value;
-        todoString.value="";
+        var newtodos = getDom('todoString').value;
+        getDom('todoString').value="";
+        str = getDom('todolist').innerHTML;
+        str +=' \
+         <li>\
+              <button class="delete">×</button>\
+              <input type="checkbox" class="toggle-checked">\
+              <span class="text"> '+ newtodos +' </span>\
+          </li>';
+        getDom('todolist').innerHTML = str;
      }
-
-     getDom()
-
 }
