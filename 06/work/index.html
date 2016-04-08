@@ -17,9 +17,7 @@
 			margin: 10px;
 			padding: 5px
 		}
-		.text{
-			vertical-align: middle;		
-		}
+
 	</style>
 </head>
 <body>
@@ -32,7 +30,8 @@
 
 	<script type="text/template" id="searchTemp">
 
-		<%
+		<%	
+			if(list.length==0){alert("검색결과가 없습니다.")}
 			for(var i=0; i<list.length; i++){
 				var searchList = list[i];
 		%>
