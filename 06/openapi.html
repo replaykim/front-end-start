@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h3> </h3>
+
+	<ul>
+
+	</ul>
+	<script type="text/template">
+		<%
+			for( var i = 0; i<list.length;i++){
+				var movie = list [i]
+		%>
+		<li>
+			<h2><%=movie.title%></h2>
+			<img src="<%=movie.link%>" width="200" >
+			<div>별점 : <%=movie.moviePoint.inspectPointAvg%>
+			</div>
+			<div>
+				<a href="주소">예매하기</a>
+			</div>
+		</li>
+<%}%>
+	</script>
+
+	<script src="template.js"></script>
+	<script src="jsonp.js"></script>
+	<script src="openapi.js"></script>
+
+</body>
+</html>
