@@ -9,10 +9,10 @@ var count
 var page
 
 search.addEventListener('click',function(){
-	  whatsearch = text.value;
-	  count = 10;
-	  page =1;
-	  getjson(makeUrl(whatsearch));
+	whatsearch = text.value;
+	count = 10;
+	page =1;
+	getjson(makeUrl(whatsearch));
 });
 
 function getjson(apiurl) {
@@ -39,8 +39,6 @@ function more(){
 	var addbutton = wrap.innerHTML;
 	addbutton += '<button onclick ="viewmore()">더보기</button>';
 	wrap.innerHTML=addbutton
-
-
 }
 
 function viewmore(){
@@ -54,13 +52,6 @@ function viewmore(){
 		else{
 			count += 10;
 		}
-	getjson(makeUrl(whatsearch));
+		getjson(makeUrl(whatsearch));
 	}
-}
-
-function changeBold(searchlistTitle,whatsearch){
-	var bold_whatsearch
-	str = str.replace(/whatsearch/g,bold_whatsearch());
-
-	return str
 }

@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Search</title>
-	<style type="text/css">
-		a{
-			text-decoration: none;
-		}
-		ul{
-			list-style: none;
-			margin: 0;
-			padding: 0;
-		}
-		ul > li{
-			border: solid 1px black;
-			margin: 10px;
-			padding: 5px
-		}
-
-	</style>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-	<input type="text" id="text" placeholder="검색하세요"> <br>
-	<button id="search">검색</button>
-	<ul id="wrap">
+    <input type="text" id="text" placeholder="검색하세요"> <br>
+    <button id="search">검색</button>
+    <ul id="wrap">
 
-	</ul>
+    </ul>
 
 
-	<script type="text/template" id="searchTemp">
+    <script type="text/template" id="searchTemp">
 
-		<%	
-			if(list.length==0){alert("검색결과가 없습니다.")}
-			for(var i=0; i<list.length; i++){
-				var searchList = list[i];
-				var result = whatsearch.bold();
-				var title_split = searchList.title.split(whatsearch);
-		%>
-			<li>
-				<a href="<%=searchList.link%>">
-					<%=title_split[0]+result+title_split[1]%>
-				</a>
-			</li>
-		<% } %>
-	</script>
+        <%  
+        if(list.length==0){alert("검색결과가 없습니다.")}
+        for(var i=0; i<list.length; i++){
+        var searchList = list[i];
+        var result = whatsearch.bold();
+        var title_split = searchList.title.split(whatsearch);
+        %>
+        <li>
+            <a href="<%=searchList.link%>" title = "페이지 이동">
+                <%=title_split[0]+result+title_split[1]%>
+            </a>
+        </li>
+        <% } %>
+    </script>
 
-	<!-- <script src="../ajax.js"></script> -->
-	<script src="../jsonp.js"></script>
-	<script src="../template.js"></script>
-	<script src="app.js"></script>
+    <!-- <script src="../ajax.js"></script> -->
+    <script src="../jsonp.js"></script>
+    <script src="../template.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
