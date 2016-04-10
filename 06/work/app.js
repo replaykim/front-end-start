@@ -5,14 +5,13 @@ var template = document.getElementById('searchTemp').innerHTML;
 var wrap = document.getElementById('wrap');
 var  add = document.getElementById('add');
 var whatsearch = null;
-var count = 10;
-var page = 1
-
-
-
+var count
+var page
 
 search.addEventListener('click',function(){
 	  whatsearch = text.value;
+	  count = 10;
+	  page =1;
 	  getjson(makeUrl(whatsearch));
 });
 
@@ -57,4 +56,11 @@ function viewmore(){
 		}
 	getjson(makeUrl(whatsearch));
 	}
+}
+
+function changeBold(searchlistTitle,whatsearch){
+	var bold_whatsearch
+	str = str.replace(/whatsearch/g,bold_whatsearch());
+
+	return str
 }

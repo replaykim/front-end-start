@@ -34,10 +34,12 @@
 			if(list.length==0){alert("검색결과가 없습니다.")}
 			for(var i=0; i<list.length; i++){
 				var searchList = list[i];
+				var result = whatsearch.bold();
+				var title_split = searchList.title.split(whatsearch);
 		%>
 			<li>
 				<a href="<%=searchList.link%>">
-					<%=searchList.title%>
+					<%=title_split[0]+result+title_split[1]%>
 				</a>
 			</li>
 		<% } %>
