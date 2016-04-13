@@ -1,4 +1,4 @@
-console.log("dd")
+console.log("Search Api")
 var text = document.getElementById('text');
 var search = document.getElementById('search');
 var template = document.getElementById('searchTemp').innerHTML;

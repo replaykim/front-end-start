@@ -13,8 +13,8 @@ ul > li{
 	border-radius:4px;
 }
 
-button{
-
+button{	
+	font-size : 12px;
 	margin: 10px 210px 20px 210px;
 }
 
@@ -29,5 +29,6 @@ button{
 
 #text{
 	position:absolute;
-	left: 175px;
+	left: 170px;
+		font-size : 15px;
 }

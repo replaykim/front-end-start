@@ -21,6 +21,16 @@
   </ul>
 
 </div>
- <script type="text/javascript" src="./todos.js"></script>
+
+<script type="text/template" id="todotemp">
+       <li>
+            <button class="delete" onclick = deleteli(this);>×</button>
+            <input type="checkbox" class="toggle-checked">
+            <span class="text"> <%= list %> </span>
+        </li>
+</script>
+<script src="todos.js"></script>
+<script src="template.js"></script>
+
 </body>
 </html>

@@ -1,37 +1,27 @@
 //start...
-console.log(1);
-var todos=[
-			{title : "JS공부하기",
-			 done:"false"
-			}
-		];
+console.log('todolist');
 
 function getDom(id){
 	return  document.getElementById(id);
 }
-
+var todotemp = getDom('todotemp').innerHTML;
+var todolist = getDom('todolist');
 // todoString = document.getElementById('todoString');
 
 function onKeyDown()
 {
    if(event.keyCode == 13)
    {
-        //TODO : 실행시킬 코드
-        console.log("ddd");
+        //TODO : 실행시킬 코드;
       var newtodos = getDom('todoString').value;
       getDom('todoString').value="";
-      str = getDom('todolist').innerHTML;
-      str +=' \
-       <li>\
-            <button class="delete">×</button>\
-            <input type="checkbox" class="toggle-checked">\
-            <span class="text"> '+ newtodos +' </span>\
-        </li>';
-      getDom('todolist').innerHTML = str;
+
+      var html = tmpl(todotemp, {list:newtodos});
+      todolist.innerHTML = html;
    }
 }
 
-getDom('todolist').addEventListener('click',function(){
-    var deleteBt = event.target;
-    deleteBt.parentElement.remove();
-});
+function deleteli(event){
+  var deltarget = event;
+  deltarget.parentElement.remove();
+}
