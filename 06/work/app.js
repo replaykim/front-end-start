@@ -8,22 +8,19 @@ var whatsearch = null;
 var count
 var page
 
-function onKeyDown(){
-	if(event.keyCode == 13){
+function searchAction(){
 		whatsearch = text.value;
 		count = 10;
 		page =1;
 		getjson(makeUrl(whatsearch));
-	}
-
 }
 
-search.addEventListener('click',function(){
-	whatsearch = text.value;
-	count = 10;
-	page =1;
-	getjson(makeUrl(whatsearch));
-});
+search.addEventListener('click',searchAction);
+text.addEventListener('keyup',function(event){
+	if (event.keyCode===13) {
+		searchAction();
+	}
+})
 
 function getjson(apiurl) {
 	getJSON(apiurl, function(res){
