@@ -8,6 +8,16 @@ var whatsearch = null;
 var count
 var page
 
+function onKeyDown(){
+	if(event.keyCode == 13){
+		whatsearch = text.value;
+		count = 10;
+		page =1;
+		getjson(makeUrl(whatsearch));
+	}
+
+}
+
 search.addEventListener('click',function(){
 	whatsearch = text.value;
 	count = 10;

@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div id="allwrap">
-    <input type="text" id="text" placeholder="검색하세요"> <br>
-    <button id="search">검색</button>
-    <ul id="wrap">
+    <div id="allwrap">
+        <form class="new-task" onsubmit="return false">
+        <input type="text" id="text" onKeyDown="onKeyDown()" placeholder="검색하세요"> <br>
+        </form>
+        <button id="search">검색</button>
+        <ul id="wrap">
 
-    </ul>
-</div>
+        </ul>
+    </div>
 
     <script type="text/template" id="searchTemp">
 
