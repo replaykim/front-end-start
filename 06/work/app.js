@@ -3,17 +3,10 @@ var text = document.getElementById('text');
 var search = document.getElementById('search');
 var template = document.getElementById('searchTemp').innerHTML;
 var wrap = document.getElementById('wrap');
-var  add = document.getElementById('add');
+// var  add = document.getElementById('add');
 var whatsearch = null;
 var count
 var page
-
-function searchAction(){
-		whatsearch = text.value;
-		count = 10;
-		page =1;
-		getjson(makeUrl(whatsearch));
-}
 
 search.addEventListener('click',searchAction);
 text.addEventListener('keyup',function(event){
@@ -21,6 +14,13 @@ text.addEventListener('keyup',function(event){
 		searchAction();
 	}
 })
+
+function searchAction(){
+		whatsearch = text.value;
+		count = 10;
+		page =1;
+		getjson(makeUrl(whatsearch));
+}
 
 function getjson(apiurl) {
 	getJSON(apiurl, function(res){
