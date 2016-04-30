@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>검색서비스</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="exam.css">
+</head>
+<body>
+
+	<div class="container">
+		<h1>검색 서비스</h1>
+
+		<form  class="form-inline" onsubmit="return false">
+			<div class="input-group">
+				<input type="text" id="inputWhat" class="form-control" placeholder="검색어를 넣어주세요">
+				<div class="input-group-addon">
+					<button class="btnbtn-primary" id="searchButton">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+		</form>
+
+		<ul  class="nav nav-tabs" style="margin-top:30px">
+			<li class="active"><a href="#">게시판</a></li>
+			<li><a href="#">동영상</a></li>
+			<li><a href="#">이미지</a></li>
+			<li><a href="#">팁</a></li>
+			<li><a href="#">블로그</a></li>
+			<li><a href="#">카페</a></li>
+		</ul>
+		<!-- 이미지 있을경우만 이미지 노출 -->
+		<div class="mov-panel" style="margin-top:30px">
+			<div id="loading"></div>
+
+			<ul id="wrap">
+
+			</ul>
+		</div>
+
+		<!-- 더보기 있을경우만 노출 -->
+		<button class="btn btn-default btn-block" id="more">더보기</button>
+	</div>
+	<script type="text/template" id="imageTemp">
+		<%
+			for(var i=0;i<list.length;i++){ 
+			var searchList = list[i];
+		%>
+		<li><a href="<%=searchList.link%>" title = "페이지 이동" target="_blank"><img src="<%=searchList.thumbnail%>" width="100" class="img-thumbnail"><%=searchList.title%></a></li>
+		<%
+			}
+		%>
+</script>
+<script type="text/template" id="boardTemp">
+	<%
+		for(var i=0;i<list.length;i++){ 
+		var searchList = list[i];
+	%>
+	<li><a href="<%=searchList.link%>" title = "페이지 이동" target="_blank"><%= searchList.title %></a></li>
+	<%
+		}
+	%>
+</script>
+<script src="jsonp.js"></script>
+<script src="template.js"></script>
+<script src="util.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
