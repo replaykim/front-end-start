@@ -27,7 +27,7 @@ function initialize(fistcard, seconcard){
 
 function addEvent(){
 
-  $wrap.on('click', '.card', function(event){
+  $wrap.on('click', '.card.close', function(event){
 
     var $target = $(event.currentTarget);
     var num = $target.attr('num');
@@ -39,19 +39,20 @@ function addEvent(){
         $target.removeClass('close');
         $target.addClass('open');
         $firstCard = $target;
-        failFlag =false ;
+        failFlag = false ;
     }
     else{
         $target.removeClass('close');
         $target.addClass('open');
         $secondCard = $target;
+
+
         if ($firstCard.attr('num')===$secondCard.attr('num')) {
             failFlag = true;
-            $firstCard.off('click','.card',event);
-            $secondCard.off('click','.card',event);
+
             count += 1
             if (count ===4) {
-
+                    alert("끝!")
             }
 
         }else{
