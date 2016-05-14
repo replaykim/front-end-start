@@ -19,7 +19,7 @@ function printCards(){
 
 function addEvent(){
 
-  $wrap.on('click', '.card', function(event){
+  $wrap.on('click', '.card', function (event){
 
     var $target = $(event.currentTarget);
     var num = $target.attr('num');
@@ -27,7 +27,8 @@ function addEvent(){
 
     console.log('click card!', num)
 });
-  console.log(11)
+
+
 }
 
 function turnOpen($target){
