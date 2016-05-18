@@ -27,15 +27,25 @@
         }
 
       }//end for
-
       app.$wrap.trigger("removeCollection", [data]);
 
     },
+    change: function(id) {
 
-    change : function(check){
-      data.push(check);
-      app.$wrap.trigger("addCollection", [data]);
-      return check
+      $.each(data, function (prop,value) {
+
+       if(value.id == id) {
+         if(value.check){
+           value.check = false;
+         }
+         else{
+           value.check = true;
+         }
+       }
+     });
+      app.$wrap.trigger("checkCollection", [data]);
+      
     }
+
   };
 })(Todo, jQuery);

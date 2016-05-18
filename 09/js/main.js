@@ -2,38 +2,43 @@
 (function($, global, app){
 
 
-  var $todoStringField = $('#todoString');
-  var $listDom = $('#todoList');
-  
-  // todoStringField.addEventListener('keyup', addTodo);
-  $todoStringField.on('keyup', app.view.addTodo );
+	var $todoStringField = $('#todoString');
+	var $listDom = $('#todoList');
 
 
-  // //삭제버튼 이벤트 잡기 위해 상위에서 이벤트 listen 하기
-  $listDom.on('click', '.delete', function(event){
+	// todoStringField.addEventListener('keyup', addTodo);
+	$todoStringField.on('keyup', app.view.addTodo );
 
-    //console.log('delete');
 
-    var $deleteBtn = $(event.target);
-    var id = $deleteBtn.parent().data('id');
+	// //삭제버튼 이벤트 잡기 위해 상위에서 이벤트 listen 하기
+	$listDom.on('click', '.delete', function(event){
 
-    app.collection.remove( id );
+		//console.log('delete');
 
-  });
+		var $deleteBtn = $(event.target);
+		var id = $deleteBtn.parent().data('id');
 
-  $listDom.on('click', '.toggle-checked', function(event){
-    console.log('check');
-    
-    var check = true;
-    app.collection.change(check);
-  })
+		app.collection.remove( id );
 
-  // //처음 로딩시에 기존에 저장된 데이터 가져와서 보여주기
-  var initData = app.util.storage.load();
-  if(initData) {
-    console.log(initData)
-    app.collection.set( initData );
-  }
+	});
+
+	$listDom.on('click', '.toggle-checked', function(event){
+		console.log('check')
+		var $changeBtn = $(event.target);
+		var checked = $changeBtn.parent().data('id');
+
+		app.collection.change( checked );
+
+	})
+
+
+
+	// //처음 로딩시에 기존에 저장된 데이터 가져와서 보여주기
+	var initData = app.util.storage.load();
+	if(initData) {
+		console.log(initData)
+		app.collection.set( initData );
+	}
 
 
 

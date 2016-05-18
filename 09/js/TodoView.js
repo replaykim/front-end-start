@@ -10,7 +10,7 @@
     addTodo: function(event){
       var $field = $(event.currentTarget);
       var fieldValue = $field.val();
-      
+
       if (event.keyCode !== 13 || fieldValue === "") {
 
         console.log('event stop');

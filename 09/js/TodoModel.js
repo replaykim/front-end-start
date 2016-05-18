@@ -5,6 +5,5 @@
     id: '',
     title: '',
     check:''
-
   };
 })(Todo);
