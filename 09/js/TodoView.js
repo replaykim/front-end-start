@@ -30,6 +30,7 @@
     },
     render: function(){
       $listDom.html(tmpl( todoTemplateHtml, {todos: app.collection.toJSON() } ));
+      
     }
   };
 
