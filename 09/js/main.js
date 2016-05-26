@@ -25,9 +25,10 @@
 	$listDom.on('click', '.toggle-checked', function(event){
 		console.log('check')
 		var $changeBtn = $(event.target);
-		var checked = $changeBtn.parent().data('id');
+		var checked = $changeBtn.is(':checked');
+		var id = $changeBtn.parent().data('id');
 
-		app.collection.change( checked );
+		app.collection.change( id, checked );
 
 	})
 

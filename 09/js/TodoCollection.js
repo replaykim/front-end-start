@@ -30,7 +30,7 @@
       app.$wrap.trigger("removeCollection", [data]);
 
     },
-    change: function(id) {
+    change: function(id, checked) {
 
       $.each(data, function (prop,value) {
 
@@ -41,6 +41,7 @@
          else{
            value.check = true;
          }
+         // data = checked
        }
      });
       app.$wrap.trigger("checkCollection", [data]);
